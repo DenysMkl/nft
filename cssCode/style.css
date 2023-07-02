@@ -1,0 +1,476 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  min-height: 100%;
+  line-height: 1;
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  background-color: #05121B;
+}
+
+[class*=_container] {
+  max-width: 1140px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.wrapper header {
+  -webkit-box-shadow: 0 1px 10px 0 black;
+          box-shadow: 0 1px 10px 0 black;
+}
+.wrapper header .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 80px 0 0 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left top;
+     object-position: left top;
+  opacity: 0.1;
+  z-index: 1;
+}
+.wrapper header .nav_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  color: white;
+  text-transform: capitalize;
+  padding: 15px;
+  max-height: 80px;
+}
+.wrapper header .nav_container > * {
+  z-index: 2;
+}
+.wrapper header .nav_container .barMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper header .nav_container .barMenu .barMenuItem {
+  padding: 4px 10px;
+  margin: 10px;
+}
+.wrapper header .nav_container .searchBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 16px;
+  border-radius: 32px;
+  border: 2px solid #212528;
+}
+.wrapper header .nav_container .searchBlock #search {
+  margin: 0 20px;
+  background: transparent;
+  outline: transparent;
+  color: white;
+}
+.wrapper header .nav_container .searchBlock #search::-webkit-input-placeholder {
+  color: white;
+}
+.wrapper header .nav_container .searchBlock #search::-moz-placeholder {
+  color: white;
+}
+.wrapper header .nav_container .searchBlock #search:-ms-input-placeholder {
+  color: white;
+}
+.wrapper header .nav_container .searchBlock #search::-ms-input-placeholder {
+  color: white;
+}
+.wrapper header .nav_container .searchBlock #search::placeholder {
+  color: white;
+}
+.wrapper header .nav_container .wallet {
+  background-image: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  padding: 16px;
+  border: 2px solid #212528;
+  border-radius: 32px;
+}
+.wrapper header .nav_container .wallet:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background: linear-gradient(to right, #C2D1DD, #456DA2);
+  color: #2e3033;
+}
+.wrapper header .nav_container .login {
+  padding: 14px;
+  border-radius: 100%;
+  background-color: #0dabe4;
+}
+.wrapper main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+.wrapper main .main_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper main .main_container .explore {
+  height: calc(100vh - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: relative;
+}
+.wrapper main .main_container .explore > * {
+  z-index: 2;
+}
+.wrapper main .main_container .explore h3 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+}
+.wrapper main .main_container .explore h1 {
+  font-size: 52px;
+  color: whitesmoke;
+  text-transform: none;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 30px 0;
+  max-width: 800px;
+}
+.wrapper main .main_container .explore .buttonsBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper main .main_container .explore .buttonsBlock .but {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 32px;
+  margin: 0 16px;
+}
+.wrapper main .main_container .explore .buttonsBlock .but.createBut {
+  color: #456DA2;
+  border: 2px solid #456DA2;
+}
+.wrapper main .main_container .explore .buttonsBlock .but.expBut {
+  background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background: linear-gradient(to right, #C2D1DD, #456DA2);
+  color: #2e3033;
+}
+.wrapper main .main_container .create-sell-block {
+  margin: 32px 0;
+  padding: 16px 48px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 40px;
+}
+.wrapper main .main_container .create-sell-block h2 {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #69eacb), color-stop(60%, #eaccf8), to(#6654f1));
+  background-image: linear-gradient(to right, #69eacb 30%, #eaccf8 60%, #6654f1 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 32px;
+  color: transparent;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 32px 0;
+}
+.wrapper main .main_container .create-sell-block .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.wrapper main .main_container .create-sell-block .cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px;
+}
+.wrapper main .main_container .create-sell-block .cards .card h3 {
+  font-size: 24px;
+  color: white;
+  text-transform: none;
+  font-weight: 600;
+  padding: 32px 0;
+  text-align: center;
+}
+.wrapper main .main_container .create-sell-block .cards .card span {
+  font-size: 14px;
+  color: white;
+  text-transform: none;
+  font-weight: 300;
+  max-width: 240px;
+  line-height: 1.3;
+  text-align: center;
+}
+.wrapper main .main_container .arts {
+  margin: 32px 0;
+  padding: 0 24px;
+  width: 100%;
+}
+.wrapper main .main_container .arts .articl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 48px;
+}
+.wrapper main .main_container .arts .articl h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.wrapper main .main_container .arts .articl .but {
+  background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background: linear-gradient(to right, #C2D1DD, #456DA2);
+  font-size: 12px;
+  color: #2e3033;
+  text-transform: capitalize;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 32px;
+}
+.wrapper main .main_container .arts .marketblock {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.wrapper main .main_container .arts .marketblock .nft-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 200px;
+  padding: 16px;
+  background-color: #142029;
+  border-radius: 10px;
+  margin: 0 0 30px;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .image-block .nft-img {
+  max-width: 100%;
+  border-radius: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .timer {
+  border: 1px solid #456DA2;
+  border-radius: 16px;
+  padding: 8px 12px;
+  background: #05121B;
+  font-size: 12px;
+  color: white;
+  text-transform: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.wrapper main .main_container .arts .marketblock .nft-card .nft-name {
+  font-size: 14px;
+  color: white;
+  text-transform: capitalize;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-weight: bold;
+  margin: 4px 0 16px;
+}
+.wrapper main .main_container .arts .marketblock .nft-card hr {
+  width: 100%;
+  height: 2px;
+  background: #1D262E;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .buy-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 16px 0 0;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .buy-block .price {
+  font-size: 12px;
+  color: white;
+  text-transform: none;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .buy-block .but {
+  font-size: 12px;
+  color: transparent;
+  text-transform: capitalize;
+  background-image: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid #456DA2;
+  border-radius: 16px;
+}
+.wrapper main .main_container .arts .marketblock .nft-card .buy-block .but:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background: linear-gradient(to right, #C2D1DD, #456DA2);
+  color: #2e3033;
+}

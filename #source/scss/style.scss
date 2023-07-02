@@ -1,0 +1,339 @@
+@mixin flexblock($content, $items, $dir: row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin active_but(){
+    background: linear-gradient(to right, #C2D1DD, #456DA2);
+    color: #2e3033;
+}
+
+@mixin article_template(){
+    margin: 32px 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+@mixin topic_tag(){
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+@mixin text($col, $size, $transform){
+    font-size: $size;
+    color: $col;
+    text-transform: $transform;
+}
+
+@mixin temp_but(){
+    background: linear-gradient(to right, #C2D1DD, #456DA2);
+    @include text(#2e3033, 12px, capitalize);
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 32px;
+}
+
+$header_height: 80px;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a:active,
+a:hover,
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+ul,
+li,
+ol {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+html,
+body {
+    min-height: 100%;
+    line-height: 1;
+    font-family: 'Lexend', sans-serif;
+    font-size: 12px;
+    background-color: #05121B;
+    
+}
+
+[class*='_container'] {
+    max-width: 1140px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    header{
+        box-shadow: 0 1px 10px 0 black;
+        .bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: $header_height 0 0 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+            opacity: .1;
+            z-index: 1;
+        }
+        .nav_container{
+            @include flexblock(space-between, center);
+            @include text(white, 14px, capitalize);
+            padding: 15px;
+            max-height: $header_height;
+            
+            >*{
+                z-index: 2;
+            }
+
+            .barMenu{
+                @include flexblock(center, center);
+                .barMenuItem{
+                    padding: 4px 10px;
+                    margin: 10px;
+                }
+            }
+    
+            .searchBlock{
+                @include flexblock(center, center);
+                padding: 10px 16px;
+                border-radius: 32px;
+                border: 2px solid #212528;
+                #search{
+                    margin: 0 20px;
+                    background: transparent;
+                    outline: transparent;
+                    color: white;
+                    &::placeholder{
+                        color: white;
+                        
+                    }
+                }
+            }
+            .wallet{
+                background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+                background-clip: text;
+                color: transparent;
+                font-weight: bold;
+                padding: 16px;
+                border: 2px solid #212528;
+                border-radius: 32px;
+                
+                &:hover{
+                    @include active_but();
+                }
+            }
+            .login{
+                padding: 14px;
+                border-radius: 100%;
+                background-color: #0dabe4;
+                // background: radial-gradient(#0dabe4 30%, #0d1fed 75%);
+                
+            }
+        }
+    }
+    
+
+    main{
+        flex: 1 1 auto;
+        .main_container{
+            @include flexblock(center, center, column);
+
+            .explore{
+                height: calc(100vh - $header_height);
+                @include flexblock(center, center, column);
+                text-align: center;
+                position: relative;
+                > *{
+                    z-index: 2;
+                }
+                h3{
+                    background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+                    background-clip: text;
+                    color: transparent;
+                    font-weight: bold;
+                    font-size: 16px
+                }
+
+                h1{
+                    @include text(whitesmoke, 52px, none);
+                    font-weight: bold;
+                    line-height: 1.2;
+                    padding: 30px 0;
+                    max-width: 800px;
+                }
+                
+                .buttonsBlock{
+                    @include flexblock(center, center);
+                    .but{
+                        padding: 16px 32px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        border-radius: 32px;
+                        margin: 0 16px;
+                        &.createBut{
+                            color: #456DA2;
+                            border: 2px solid #456DA2;
+                            
+                        }
+                        &.expBut{
+                            background: linear-gradient(to right, #C2D1DD, #456DA2);
+                            color: #2e3033;
+                        }
+                    }
+                }
+            }
+
+            .create-sell-block{
+                margin: 32px 0;
+                padding: 16px 48px;
+                border: 1px solid rgb(128, 128, 128);
+                border-radius: 40px;
+                
+                h2{
+                    background-image: linear-gradient(to right, #69eacb 30%, #eaccf8 60%, #6654f1 100%);
+                    background-clip: text;
+                    @include text(transparent, 32px, capitalize);
+                    text-align: center;
+                    padding: 32px 0;
+                }
+                .cards{
+                    @include flexblock(space-around, center);
+                    flex-wrap: wrap;
+                    .card{
+                        @include flexblock(space-around, center, column);
+                        margin: 32px;
+                        h3{
+                            @include text(white, 24px, none);
+                            font-weight: 600;
+                            padding: 32px 0;
+                            text-align: center
+                        }
+                        span{
+                            @include text(white, 14px, none);
+                            font-weight: 300;
+                            max-width: 240px;
+                            line-height: 1.3;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .arts{
+                @include article_template();
+                
+                .articl{
+                    @include flexblock(space-between, center);
+                    margin: 0 0 48px;
+                    h2{
+                        @include topic_tag();
+                    }
+                    .but{
+                        @include temp_but();
+                    }
+                }
+                .marketblock{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+                    .nft-card{
+                        @include flexblock(space-around, center, column);
+                        justify-self: center;
+                        align-self: center;
+                        width: 200px;
+                        padding: 16px;
+                        background-color: #142029;
+                        border-radius: 10px;
+                        margin: 0 0 30px;
+                        .image-block{
+                            .nft-img{
+                                max-width: 100%;
+                                border-radius: 16px;
+                                object-fit: cover;
+                            }
+                        }
+                        
+                        .timer{
+                            border: 1px solid #456DA2;
+                            border-radius: 16px;
+                            padding: 8px 12px;
+                            background: #05121B;
+                            @include text(white, 12px, none);
+                            transform: translateY(-50%);
+                        }
+                        .nft-name{
+                            @include text(white, 14px, capitalize);
+                            align-self: flex-start;
+                            font-weight: bold;
+                            margin: 4px 0 16px;
+                        }
+                        hr{
+                            width: 100%;
+                            height: 2px;
+                            background: #1D262E;
+                        }
+
+                        .buy-block{
+                            @include flexblock(space-between, center);
+                            width: 100%;
+                            margin: 16px 0 0;
+                            .price{
+                                @include text(white, 12px, none);
+                            }
+                            .but{
+                                @include text(transparent, 12px, capitalize);
+                                background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+                                background-clip: text;
+                                font-weight: bold;
+                                padding: 8px;
+                                border: 1px solid #456DA2;
+                                border-radius: 16px;
+
+                                &:hover{
+                                    @include active_but();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
