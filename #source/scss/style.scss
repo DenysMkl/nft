@@ -18,7 +18,7 @@
 
 @mixin topic_tag(){
     color: white;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -27,6 +27,16 @@
     font-size: $size;
     color: $col;
     text-transform: $transform;
+}
+
+@mixin default_but(){
+    @include text(transparent, 12px, capitalize);
+    background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+    background-clip: text;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 1px solid #456DA2;
+    border-radius: 16px;
 }
 
 @mixin temp_but(){
@@ -221,7 +231,7 @@ body {
             }
 
             .create-sell-block{
-                margin: 32px 0;
+                margin: 32px 0 16px;
                 padding: 16px 48px;
                 border: 1px solid rgb(128, 128, 128);
                 border-radius: 40px;
@@ -256,82 +266,106 @@ body {
                 }
             }
 
+            .live{
+                @include article_template();
+            }
+
             .arts{
                 @include article_template();
-                
-                .articl{
-                    @include flexblock(space-between, center);
-                    margin: 0 0 48px;
-                    h2{
-                        @include topic_tag();
-                    }
+                .sort-by-date{
+                    @include flexblock(center, center);
+                    border: 2px solid #212528;
+                    border-radius: 12px;
+                    padding: 12px 0;
+                    margin-bottom: 40px;
                     .but{
-                        @include temp_but();
+                        @include default_but();
+                        margin: 0 12px;
+                        cursor: pointer;
+                        &.active{
+                            @include temp_but();
+                        }
                     }
+                }   
+                .nft-name{
+                    margin: 16px 0;
                 }
-                .marketblock{
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+    }
+}
 
-                    .nft-card{
-                        @include flexblock(space-around, center, column);
-                        justify-self: center;
-                        align-self: center;
-                        width: 200px;
-                        padding: 16px;
-                        background-color: #142029;
-                        border-radius: 10px;
-                        margin: 0 0 30px;
-                        .image-block{
-                            .nft-img{
-                                max-width: 100%;
-                                border-radius: 16px;
-                                object-fit: cover;
-                            }
-                        }
-                        
-                        .timer{
-                            border: 1px solid #456DA2;
-                            border-radius: 16px;
-                            padding: 8px 12px;
-                            background: #05121B;
-                            @include text(white, 12px, none);
-                            transform: translateY(-50%);
-                        }
-                        .nft-name{
-                            @include text(white, 14px, capitalize);
-                            align-self: flex-start;
-                            font-weight: bold;
-                            margin: 4px 0 16px;
-                        }
-                        hr{
-                            width: 100%;
-                            height: 2px;
-                            background: #1D262E;
-                        }
+.articl{
+    @include flexblock(space-between, center);
+    margin: 0 0 40px;
+    h2{
+        @include topic_tag();
+    }
+    .but{
+        @include temp_but();
+    }
+}
 
-                        .buy-block{
-                            @include flexblock(space-between, center);
-                            width: 100%;
-                            margin: 16px 0 0;
-                            .price{
-                                @include text(white, 12px, none);
-                            }
-                            .but{
-                                @include text(transparent, 12px, capitalize);
-                                background-image: linear-gradient(to right, #C2D1DD, #456DA2);
-                                background-clip: text;
-                                font-weight: bold;
-                                padding: 8px;
-                                border: 1px solid #456DA2;
-                                border-radius: 16px;
+.marketblock{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    justify-content: center;
+    .nft-card{
+        @include flexblock(space-around, center, column);
+        justify-self: center;
+        align-self: center;
+        width: 200px;
+        padding: 16px;
+        background-color: #142029;
+        border-radius: 10px;
+        margin: 0 0 30px;
+        cursor: pointer;
+        .image-block{
+            .nft-img{
+                max-width: 100%;
+                border-radius: 16px;
+                object-fit: cover;
+            }
+        }
 
-                                &:hover{
-                                    @include active_but();
-                                }
-                            }
-                        }
-                    }
+        .timer{
+            border: 1px solid #456DA2;
+            border-radius: 16px;
+            padding: 8px 12px;
+            background: #05121B;
+            @include text(white, 12px, none);
+            transform: translateY(-50%);
+        }
+        .nft-name{
+            @include text(white, 14px, capitalize);
+            align-self: flex-start;
+            font-weight: bold;
+            margin: 4px 0 16px;
+        }
+        hr{
+            width: 100%;
+            height: 2px;
+            background: #1D262E;
+        }
+
+        .buy-block{
+            @include flexblock(space-between, center);
+            width: 100%;
+            margin: 16px 0 0;
+            .price{
+                @include text(white, 12px, none);
+            }
+            .but{
+                @include text(transparent, 12px, capitalize);
+                background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+                background-clip: text;
+                font-weight: bold;
+                padding: 8px;
+                border: 1px solid #456DA2;
+                border-radius: 16px;
+
+                &:hover{
+                    @include active_but();
                 }
             }
         }
