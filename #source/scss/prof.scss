@@ -1,0 +1,121 @@
+@mixin flexblock($content, $items, $dir: row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin active_but(){
+    background: linear-gradient(to right, #C2D1DD, #456DA2);
+    color: #2e3033;
+}
+
+@mixin article_template(){
+    margin: 16px 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+@mixin topic_tag(){
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+@mixin text($col, $size, $transform){
+    font-size: $size;
+    color: $col;
+    text-transform: $transform;
+}
+
+@mixin default_but(){
+    @include text(transparent, 12px, capitalize);
+    background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+    background-clip: text;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 1px solid #456DA2;
+    border-radius: 16px;
+}
+
+@mixin temp_but(){
+    background: linear-gradient(to right, #C2D1DD, #456DA2);
+    @include text(#2e3033, 12px, capitalize);
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 32px;
+}
+
+$header_height: 80px;
+
+main{
+    .profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .back-user-img{
+            flex: 1 1 300px;
+            @include flexblock(flex-end, flex-end);
+            padding: 40px 80px;
+            position: relative;
+            .curr-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            label{
+                @include text(white, 16px, capitalize);
+                cursor: pointer;
+                position: relative;
+                padding: 12px;
+                background-color: #2e3033;                    
+                border-radius: 100%;
+            }
+            
+        }
+        .user-avatar{
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            align-self: center;
+            bottom: 0;
+            transform: translateY(-75%);
+            cursor: pointer;
+            .avatar{
+                position: absolute;
+                border: 3px solid black;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 100%;
+                
+            }
+        }
+        .send-prof-img{
+            align-self: center;
+            background-color: #111E26;
+            @include text(white, 14px, capitalize);
+            font-weight: bold;
+            padding: 10px 12px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+    }
+    .main_container{
+        
+    }
+}
