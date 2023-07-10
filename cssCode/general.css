@@ -181,6 +181,10 @@ body {
   border-radius: 100%;
   background-color: #0dabe4;
 }
+.wrapper header .nav_container .login img {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
 .wrapper main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;

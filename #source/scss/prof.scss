@@ -107,6 +107,7 @@ main{
         }
         .send-prof-img{
             align-self: center;
+            cursor: pointer;
             background-color: #111E26;
             @include text(white, 14px, capitalize);
             font-weight: bold;
@@ -116,6 +117,78 @@ main{
         }
     }
     .main_container{
+        form{
+            margin: 0 0 80px 0;
+            .field{
+                display: flex;
+                flex-direction: column;
+                gap: 20px 0;
+                h3{
+                    @include text(white, 24px, capitalize);
+                    
+                }
+                input{
+                    outline: none;
+                    width: 100%;
+                    background: transparent;
+                    @include text(white, 14px, none);
+                }
+
+                [class*='-info']{
+                    @include flexblock(space-between, center);
+                    gap: 0 32px;
+                    flex-wrap: wrap;
+
+                    [class*='-block'] {
+                        @include flexblock(center, flex-start, column-reverse);
+                        flex: 1 1 auto;
+                        gap: 12px 0;
+                        flex-wrap: wrap;
+
+                        [class*='-inp'] {
+                            width: 100%;
+                            padding: 8px;
+                            border: 2px solid #2e3033;
+                            border-radius: 8px;
+                        }
+    
+                        label{
+                            @include text(#828082, 14px, capitalize);
+                            font-weight: 200;
+                        }
+                    }
+                }
+
+                .bio{
+                    padding: 12px;
+                    border: 2px solid #2e3033;
+                    border-radius: 8px;
         
+                    #user-bio{
+                        resize: none;
+                        width: 100%;
+                        outline: transparent;
+                        background: transparent;
+                        @include text(white, 14px, none);
+    
+                        &::placeholder{
+                            color: #828082;
+                        }
+                    }
+                }
+
+                .upd-prof{
+                    align-self: flex-end;
+                    padding: 16px;
+                    border-radius: 24px;
+                    @include active_but();
+                    @include text(#2e3033, 14px, capitalize);
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                
+            }
+        }
     }
+        
 }

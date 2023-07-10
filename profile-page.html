@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./cssCode/general.css"
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400&family=Poppins:wght@500&display=swap" rel="stylesheet">>
+    <link rel="stylesheet" href="./cssCode/general.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./cssCode/prof.css">
 </head>
 <body>
@@ -55,7 +55,43 @@
             </form>
         
             <div class="main_container">
-                
+                <form action="#" method="post">
+                    <div class="field">
+                        <h3>information</h3>
+                        <div class="user-info">
+                            <div class="inp-full-name-block">
+                                <div class="full-name-inp">
+                                    <input type="text" id="inp-full-name" name="inp-fname"/>
+                                </div>
+                                <label for="inp-full-name">full name</label>
+                            </div>
+                            <div class="inp-nickname-block">
+                                <div class="nick-inp">
+                                    <input type="text" id="inp-nickname" name="inp-name"/>
+                                </div>
+                                <label for="inp-nickname">user name</label>
+                            </div>
+                        </div>
+                        <div class="soc-info">
+                            <div class="inp-fb-block">
+                                <div class="fb-inp">
+                                    <input type="text" id="inp-fb" name="inp-fb"/>
+                                </div>
+                                <label for="u-fb">facebook</label>
+                            </div>
+                            <div class="inp-tg-block">
+                                <div class="tg-inp">
+                                    <input type="text" id="inp-tg" name="inp-tg"/>
+                                </div>
+                                <label for="inp-tg">telegram</label>
+                            </div>
+                        </div>
+                        <div class="bio">
+                            <textarea name="user-bios" id="user-bio" placeholder="Say something abiout yourself" cols="30" rows="10"></textarea>
+                        </div>
+                        <button type="submit" class="upd-prof">Update profile</button>
+                    </div>
+                </form>
             </div>
         </main>
         <footer class="footer">
