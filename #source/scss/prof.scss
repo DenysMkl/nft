@@ -135,9 +135,10 @@ main{
                 }
 
                 [class*='-info']{
-                    @include flexblock(space-between, center);
-                    gap: 0 32px;
-                    flex-wrap: wrap;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 24px;
+                    
 
                     [class*='-block'] {
                         @include flexblock(center, flex-start, column-reverse);
