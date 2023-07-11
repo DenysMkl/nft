@@ -53,7 +53,7 @@ main{
     
     .main_container{
 
-
+        margin-bottom: 80px;
         .explore{
             height: calc(100vh - $header_height);
             @include flexblock(center, center, column);
