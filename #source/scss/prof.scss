@@ -84,6 +84,7 @@ main{
             }
             
         }
+        
         .user-avatar{
             width: 120px;
             height: 120px;
@@ -92,6 +93,7 @@ main{
             bottom: 0;
             transform: translateY(-75%);
             cursor: pointer;
+            
             .avatar{
                 position: absolute;
                 border: 3px solid black;
@@ -137,6 +139,7 @@ main{
                 [class*='-info']{
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    justify-content: center;
                     gap: 24px;
                     
 

@@ -122,6 +122,9 @@ main .main_container form .field [class*=-info] {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 24px;
 }
 main .main_container form .field [class*=-info] [class*=-block] {
