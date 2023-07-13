@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./cssCode/general.css">
+    <link rel="stylesheet" href="./cssCode/goods-temp.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./cssCode/prof.css">
 </head>
@@ -32,63 +33,65 @@
             </nav>
         </header>
         <main>
-        
-            <form action="#" method="post">
-                <div class="profile">
-                    <div class="user-back-block">
-                        <img src="./photos/banner_red.png" alt="" class="curr-bg-img">
-                        <input type="file" name="user-bg" id="user-bg">
-                        <label for="user-bg">
-                            <img src="./photos/icons/login.svg" alt="" class="dwnl-bg">
-                        </label>                    
-                    </div>
-                    <div class="user-avatar-block">
-                        <img src="./photos/user.png" alt="" class="avatar-img">
-                        <input type="file" name="user-avatar" id="user-avatar">
-                        <label for="user-avatar">
-                            <img src="./photos/icons/pen.svg" alt="" class="change-avatar">
-                        </label>    
-                    </div>
-                    <button type="submit" class="send-prof-img">upload profile changes</button>
-                </div>
-            </form>
-        
             <div class="main_container">
-                <form action="#" method="post">
-                    <div class="field">
-                        <h3>information</h3>
-                        <div class="user-info">
-                            <div class="inp-full-name-block">
-                                <div class="full-name-inp">
-                                    <input type="text" id="inp-full-name" name="inp-full-name"/>
-                                </div>
-                                <label for="inp-full-name">full name</label>
-                            </div>
-                            <div class="inp-nickname-block">
-                                <div class="nick-inp">
-                                    <input type="text" id="inp-nickname" name="inp-nickname"/>
-                                </div>
-                                <label for="inp-nickname">user name</label>
-                            </div>
-                            <div class="inp-fb-block">
-                                <div class="fb-inp">
-                                    <input type="text" id="inp-fb" name="inp-fb"/>
-                                </div>
-                                <label for="u-fb">facebook</label>
-                            </div>
-                            <div class="inp-tg-block">
-                                <div class="tg-inp">
-                                    <input type="text" id="inp-tg" name="inp-tg"/>
-                                </div>
-                                <label for="inp-tg">telegram</label>
-                            </div>
-                        </div>
-                        <div class="bio">
-                            <textarea name="user-bios" id="user-bio" placeholder="Say something abiout yourself" cols="30" rows="10"></textarea>
-                        </div>
-                        <button type="submit" class="upd-prof">Update profile</button>
+                <div class="about-goods">
+                    <div class="goods-img-block">
+                        <img src="./photos/nftcard.png" alt="nft-card" class="nft-card-goods">
                     </div>
-                </form>
+                    <div class="descr">
+                        <h2>Azuki 3D</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, maiores veniam natus tempora suscipit commodi, ea esse possimus minima cupiditate illum quis modi consectetur hic? Quis consequatur voluptatem earum enim.</p>
+                        <hr>
+                        <div class="user-own-and-create">
+                            <div class="owner user-card">
+                                <div class="user-avatar">
+                                    <img src="./photos/user.png" alt="" class="user-avatar-img">
+                                </div>
+                                <div class="info-about-user">
+                                    <span class="status">owner</span>
+                                    <span class="user-name">denys mikliaiev</span>
+                                </div>
+                            </div>
+                            <div class="creator user-card">
+                                <div class="user-avatar">
+                                    <img src="./photos/user.png" alt="" class="user-avatar-img">
+                                </div>
+                                <div class="info-about-user">
+                                    <span class="status">creator</span>
+                                    <span class="user-name">denys mikliaiev</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price-block">
+                            <h4>price</h4>
+                            <div class="price-in-diff-curr">
+                                <span class="price-in-wrx">5.55 wrx</span>
+                                <span class="price-in-usd">(7.05 usd)</span>
+                            </div>
+                        </div>
+
+                        <div class="but-block">
+                            <div class="but make-off">
+                                make offer
+                            </div>
+                            <div class="but buy-g">
+                                buy now
+                            </div>
+                        </div>
+                        <div class="add-info-block">
+                            <ul class="add-info-nav">
+                                <li class="add-info-item">owners</li>
+                                <li class="add-info-item">offers</li>
+                                <li class="add-info-item">detail</li>
+                                <li class="add-info-item">history</li>
+                            </ul>
+                            <div class="active-line-block">
+                                <div class="active-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="footer">
@@ -159,6 +162,9 @@
             </div>
         </footer>
     </div>
-    <script src="./jsCode/attach-photo.js"></script>
+      
+      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+      <script src='./jsCode/line-check.js'></script>
+      
 </body>
 </html>
