@@ -140,6 +140,7 @@ main .main_container .marketblock {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: 20px;
+  margin: 0 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -256,16 +257,6 @@ main .main_container .marketblock .nft-card .buy-block .but:hover {
   background: linear-gradient(to right, #C2D1DD, #456DA2);
   color: #2e3033;
 }
-main .main_container .live {
-  margin: 16px 0;
-  padding: 0 24px;
-  width: 100%;
-}
-main .main_container .arts {
-  margin: 16px 0;
-  padding: 0 24px;
-  width: 100%;
-}
 main .main_container .arts .sort-by-date {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,11 +303,6 @@ main .main_container .arts .sort-by-date .but.active {
 }
 main .main_container .arts .marketblock .nft-name {
   margin: 16px 0;
-}
-main .main_container .categories {
-  margin: 16px 0;
-  padding: 0 24px;
-  width: 100%;
 }
 main .main_container .categories .card-block {
   display: -ms-grid;
@@ -383,7 +369,8 @@ main .articl {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 0 24px;
+  margin: 48px 0 32px;
+  width: 100%;
 }
 main .articl h2 {
   color: white;
