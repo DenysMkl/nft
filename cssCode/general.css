@@ -81,6 +81,7 @@ body {
 .wrapper header {
   -webkit-box-shadow: 0 1px 10px 0 black;
           box-shadow: 0 1px 10px 0 black;
+  position: relative;
 }
 .wrapper header .bg {
   position: absolute;
@@ -194,13 +195,88 @@ body {
   color: #2e3033;
 }
 .wrapper header .nav_container .login {
-  padding: 14px;
+  padding: 15px;
   border-radius: 100%;
   background-color: #0dabe4;
 }
 .wrapper header .nav_container .login img {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+.wrapper header .nav_container .user {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border: 2px solid #4d4b4b;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.wrapper header .nav_container .user img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.wrapper header .nav_container .sub-prof-menu {
+  display: none;
+}
+.wrapper header .nav_container .sub-prof-menu.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  border-radius: 16px;
+  -webkit-transform: translateY(95%);
+          transform: translateY(95%);
+  -webkit-box-shadow: 0 1px 10px 0 black;
+          box-shadow: 0 1px 10px 0 black;
+  background-color: #05121B;
+}
+.wrapper header .nav_container .sub-prof-menu .sub-prof-item {
+  padding: 10px 20px;
+}
+.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 8px;
+}
+.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link .topic-name {
+  font-size: 14px;
+  color: white;
+  text-transform: capitalize;
+}
+.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link:hover .topic-name {
+  color: #747474;
+}
+.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link:hover svg path {
+  stroke: #747474;
 }
 .wrapper main {
   -webkit-box-flex: 1;
