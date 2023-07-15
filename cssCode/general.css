@@ -81,7 +81,6 @@ body {
 .wrapper header {
   -webkit-box-shadow: 0 1px 10px 0 black;
           box-shadow: 0 1px 10px 0 black;
-  position: relative;
 }
 .wrapper header .bg {
   position: absolute;
@@ -134,6 +133,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 .wrapper header .nav_container .barMenu .barMenuItem {
   padding: 4px 10px;
@@ -188,6 +190,7 @@ body {
   padding: 16px;
   border: 2px solid #212528;
   border-radius: 32px;
+  margin: auto;
 }
 .wrapper header .nav_container .wallet:hover {
   background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
@@ -203,7 +206,27 @@ body {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.wrapper header .nav_container .user {
+.wrapper header .nav_container .user-menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 10px;
+}
+.wrapper header .nav_container .user-menu .user {
   width: 48px;
   height: 48px;
   position: relative;
@@ -211,7 +234,7 @@ body {
   border-radius: 100%;
   overflow: hidden;
 }
-.wrapper header .nav_container .user img {
+.wrapper header .nav_container .user-menu .user img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -220,10 +243,10 @@ body {
   top: 0;
   left: 0;
 }
-.wrapper header .nav_container .sub-prof-menu {
+.wrapper header .nav_container .user-menu .sub-prof-menu {
   display: none;
 }
-.wrapper header .nav_container .sub-prof-menu.active {
+.wrapper header .nav_container .user-menu .sub-prof-menu.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,24 +257,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: absolute;
-  z-index: 999;
-  bottom: 0;
   right: 0;
+  top: 0;
+  margin-top: 60px;
+  z-index: 11;
   border-radius: 16px;
-  -webkit-transform: translateY(95%);
-          transform: translateY(95%);
   -webkit-box-shadow: 0 1px 10px 0 black;
           box-shadow: 0 1px 10px 0 black;
   background-color: #05121B;
 }
-.wrapper header .nav_container .sub-prof-menu .sub-prof-item {
+.wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item {
   padding: 10px 20px;
 }
-.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link {
+.wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item .item-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,15 +289,15 @@ body {
           align-items: center;
   gap: 0 8px;
 }
-.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link .topic-name {
+.wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item .item-link .topic-name {
   font-size: 14px;
   color: white;
   text-transform: capitalize;
 }
-.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link:hover .topic-name {
+.wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item .item-link:hover .topic-name {
   color: #747474;
 }
-.wrapper header .nav_container .sub-prof-menu .sub-prof-item .item-link:hover svg path {
+.wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item .item-link:hover svg path {
   stroke: #747474;
 }
 .wrapper main {
@@ -293,7 +315,7 @@ body {
           flex-direction: column;
 }
 .wrapper main .main_container > * {
-  z-index: 2;
+  z-index: 1;
 }
 .wrapper footer .footer_container {
   display: -webkit-box;

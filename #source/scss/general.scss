@@ -129,7 +129,7 @@ $header_height: 80px;
     overflow: hidden;
     header{
         box-shadow: 0 1px 10px 0 black;
-        position: relative;
+        
         .bg{
             position: absolute;
             top: 0;
@@ -154,15 +154,18 @@ $header_height: 80px;
 
             .barMenu{
                 @include flexblock(center, center);
+                flex: 1 1 auto;
                 .barMenuItem{
                     padding: 4px 10px;
                     margin: 10px;
                 }
+                
             }
     
             .searchBlock{
                 @include flexblock(center, center);
                 padding: 10px 16px;
+                
                 border-radius: 32px;
                 border: 2px solid #212528;
                 #search{
@@ -184,6 +187,7 @@ $header_height: 80px;
                 padding: 16px;
                 border: 2px solid #212528;
                 border-radius: 32px;
+                margin: auto;
                 
                 &:hover{
                     @include active_but();
@@ -198,54 +202,61 @@ $header_height: 80px;
                 }
                 
             }
-            .user{
-                width: 48px;
-                height: 48px;
+            .user-menu{
                 position: relative;
-                border: 2px solid #4d4b4b;
-                border-radius: 100%;
-                overflow: hidden;
-                img{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    top: 0;
-                    left: 0;
-                }
-            }
-            .sub-prof-menu{
-                display: none;
-                &.active{
-                    @include flexblock(center, flex-start, column);
-                    position: absolute;
-                    z-index: 999;
-                    bottom: 0;
-                    right: 0;
-                    border-radius: 16px;
-                    transform: translateY(95%);
-                    box-shadow: 0 1px 10px 0 black;
-                    background-color: #05121B;
-                }
-                .sub-prof-item{
-                    padding: 10px 20px;
-                    .item-link{
-                        @include flexblock(center, center);
-                        gap: 0 8px;
-                        .topic-name{
-                            @include text(white, 14px, capitalize);
-                        }
+                @include flexblock(space-between, center);
+                flex: 1 1 auto;
+                margin: 0 10px;
 
-                        &:hover .topic-name{
-                            color: #747474;
+                .user{
+                    width: 48px;
+                    height: 48px;
+                    position: relative;
+                    border: 2px solid #4d4b4b;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .sub-prof-menu{
+                    display: none;
+                    &.active{
+                        @include flexblock(center, flex-end, column);
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        margin-top: calc($header_height - 20px);
+                        z-index: 11;
+                        border-radius: 16px;
+                        box-shadow: 0 1px 10px 0 black;
+                        background-color: #05121B;
+                    }
+                    .sub-prof-item{
+                        padding: 10px 20px;
+                        .item-link{
+                            @include flexblock(center, center);
+                            gap: 0 8px;
+                            .topic-name{
+                                @include text(white, 14px, capitalize);
+                            }
+    
+                            &:hover .topic-name{
+                                color: #747474;
+                            }
+                            &:hover svg path{
+                                stroke:#747474;
+                            }
                         }
-                        &:hover svg path{
-                            stroke:#747474;
-                        }
-
                     }
                 }
             }
+            
         }
     }
 
@@ -255,7 +266,7 @@ $header_height: 80px;
             display: flex;
             flex-direction: column;
             > *{
-                z-index: 2;
+                z-index: 1;
             }
         }
     }
