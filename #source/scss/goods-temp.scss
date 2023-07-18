@@ -183,8 +183,6 @@ main{
                         .active-line{
                             position: absolute;
                             bottom: 0;
-                            left: 0;
-                            width: 60px;
                             height: 4px;
                             border-radius: 2px;
                             background: linear-gradient(to right, #fff, #3567B4);
@@ -274,7 +272,7 @@ main{
                         @include flexblock(space-between, center);
                         width: 100%;
                         h4{
-                            @include text(#424242, 14px, capitalize);
+                            @include text(#747474, 14px, capitalize);
                         }
                         .price-in-diff-c{
                             @include flexblock(center, center);
