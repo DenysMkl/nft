@@ -9,7 +9,6 @@ line.style.width = `${list_items[0].offsetWidth}px`
 
 list_block.addEventListener('click', event=>{
     check = event.target.closest('.add-info-item')
-    console.log(check)
     if (check){
         line.style.left = `0px`
         list_items.forEach(elem => {

@@ -243,10 +243,7 @@ body {
   top: 0;
   left: 0;
 }
-.wrapper header .nav_container .user-menu .sub-prof-menu {
-  display: none;
-}
-.wrapper header .nav_container .user-menu .sub-prof-menu.active {
+.wrapper header .nav_container .user-menu .user.open ~ .sub-prof-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,6 +266,9 @@ body {
   -webkit-box-shadow: 0 1px 10px 0 black;
           box-shadow: 0 1px 10px 0 black;
   background-color: #05121B;
+}
+.wrapper header .nav_container .user-menu .sub-prof-menu {
+  display: none;
 }
 .wrapper header .nav_container .user-menu .sub-prof-menu .sub-prof-item {
   padding: 10px 20px;

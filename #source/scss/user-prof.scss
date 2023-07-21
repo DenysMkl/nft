@@ -58,6 +58,7 @@ main{
             @include flexblock(flex-end, flex-end);
             padding: 40px 80px;
             position: relative;
+            
             .curr-bg-img{
                 position: absolute;
                 top: 0;
@@ -65,6 +66,7 @@ main{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                user-select: none;
             }
             .useful-links{
                 z-index: 10;
@@ -72,9 +74,24 @@ main{
                 gap: 20px;
                 .icon-img{
                     @include flexblock(center, center);
-                    padding: 12px;
+                    padding: 24px;
                     border-radius: 100%;
-                    background-color: #2e3033
+                    background-color: #2e3033;
+                    position: relative;
+                    svg{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+
+                    &.active svg{
+                        fill: tomato;
+                        animation: sub .5s forwards;
+                        path{
+                            stroke: none;
+                        }
+                    }
                 }
             }
         }
@@ -101,7 +118,8 @@ main{
                     height: 100%;
                     object-fit: cover;
                     object-position: center;    
-                    border: 3px solid rgb(137, 145, 203);         
+                    border: 3px solid rgb(137, 145, 203);
+                    user-select: none;  
                 }
             }
         }
@@ -132,6 +150,7 @@ main{
                     display: flex;
                     .about-text{
                         max-width: 400px;
+                        line-height: 1.3;
                     }
                 }
                 .influence{
@@ -185,15 +204,62 @@ main{
             margin-bottom: 40px;
             .prod-buttons-block{
                 width: 100%;
+                margin: 24px 0;
                 @include flexblock(space-between, center);
-                .but{
-                    padding: 12px;
-                    border: 2px solid #1A2428;
-                    border-radius: 20px;
-                    @include text(rgb(140, 140, 140), 14px, capitalize);
-                    @include flexblock(center, center);
-                    gap: 8px;
-                    margin: 24px 0;
+                .but-and-hidd-block{
+                    position: relative;
+                    flex: 1 1 auto;
+                    @include flexblock(center, center, column);
+                    .add-but{
+                        padding: 12px;
+                        border: 2px solid #1A2428;
+                        border-radius: 20px;
+                        @include text(rgb(140, 140, 140), 14px, capitalize);
+                        @include flexblock(center, center);
+                        gap: 8px;
+                        cursor: default;
+                        &.open ~ .hidden-menu-block{
+                            @include flexblock(center, flex-start, column);
+                        }
+                    }
+                    .sort-but{
+                        align-self: flex-end;
+                    }
+                    .filter-but{
+                        align-self: flex-start;
+                    }
+                    .hidden-menu-block{
+                        position: absolute;
+                        top: 0;
+                        margin-top: 48px;
+                        z-index: 999;
+                        display: none;
+                        background-color: #142029;
+                        padding: 10px 0;
+                        border-radius: 12px;
+                        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+                        
+                        &.sort-hid-block{
+                            right: 0;
+                        }
+                        &.filt-hid-block{
+                            left: 0;
+                        }
+
+                        .hidden-menu-item{
+                            @include text(white, 14px, none);
+                            font-weight: 300;
+                            padding: 12px 32px;
+                            width: 100%;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #94969b;
+                            }
+                            &.active{
+                                background-color: #565759;
+                            }
+                        }
+                    }
                 }
             }
             .items-block{
@@ -255,5 +321,26 @@ main{
                 }
             }
         }
+    }
+}
+
+@keyframes sub{
+    0%{
+        width: 20px;
+        height: 20px;
+        fill: none;
+    }
+    10%{
+        fill: tomato;
+    }
+    50%{
+        width: 30px;
+        height: 30px;
+        fill: tomato;
+    }
+    100%{
+        width: 24px;
+        height: 24px;
+        fill: tomato;
     }
 }

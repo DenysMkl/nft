@@ -223,10 +223,8 @@ $header_height: 80px;
                         top: 0;
                         left: 0;
                     }
-                }
-                .sub-prof-menu{
-                    display: none;
-                    &.active{
+                    &.open ~ .sub-prof-menu{
+                        
                         @include flexblock(center, flex-end, column);
                         position: absolute;
                         right: 0;
@@ -236,7 +234,11 @@ $header_height: 80px;
                         border-radius: 16px;
                         box-shadow: 0 1px 10px 0 black;
                         background-color: #05121B;
+                        
                     }
+                }
+                .sub-prof-menu{
+                    display: none;
                     .sub-prof-item{
                         padding: 10px 20px;
                         .item-link{
