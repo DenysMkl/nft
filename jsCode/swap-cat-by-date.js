@@ -9,4 +9,4 @@ parent.addEventListener('click', (event)=>{
             elem.classList.toggle('active', targetElem == elem)
         });
     }
-})
+})  
