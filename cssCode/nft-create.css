@@ -1,0 +1,220 @@
+main .main_container .upload-nft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 80px;
+}
+main .main_container .upload-nft input[type=file] {
+  display: none;
+}
+main .main_container .upload-nft .create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .main_container .upload-nft .create .drop-new-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #111E26;
+  border-radius: 8px;
+  padding: 32px;
+}
+main .main_container .upload-nft .create .drop-new-img .label-drop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  border: #1D2931 solid 8px;
+  background-color: #1D2931;
+  border-radius: 12px;
+}
+main .main_container .upload-nft .create .drop-new-img .label-drop::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  background-color: #111E26;
+}
+main .main_container .upload-nft .create .drop-new-img .label-drop label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  z-index: 999;
+}
+main .main_container .upload-nft .create .drop-new-img .label-drop label img {
+  width: 60px;
+  height: 60px;
+}
+main .main_container .upload-nft .create .drop-new-img .label-drop label span {
+  background-image: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 16px;
+  color: transparent;
+  text-transform: none;
+  padding: 10px 0;
+}
+main .main_container .upload-nft .add-info-abt-nft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp .descr-area {
+  grid-column: 1/-1;
+  resize: none;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp .descr-area #descr {
+  width: 100%;
+  resize: none;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input,
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea {
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: white;
+  text-transform: none;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input::-webkit-input-placeholder, main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea::-webkit-input-placeholder {
+  color: #828082;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input::-moz-placeholder, main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea::-moz-placeholder {
+  color: #828082;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input:-ms-input-placeholder, main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea:-ms-input-placeholder {
+  color: #828082;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input::-ms-input-placeholder, main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea::-ms-input-placeholder {
+  color: #828082;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp input::placeholder,
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea::placeholder {
+  color: #828082;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp [class*=-area] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  gap: 12px;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp [class*=-area] [class*=-inp] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #2e3033;
+  border-radius: 8px;
+}
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp [class*=-area] label {
+  font-size: 14px;
+  color: #828082;
+  text-transform: capitalize;
+  font-weight: 200;
+}
+main .main_container .upload-nft #create-item-but {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 16px;
+  border-radius: 24px;
+  background: -webkit-gradient(linear, left top, right top, from(#C2D1DD), to(#456DA2));
+  background: linear-gradient(to right, #C2D1DD, #456DA2);
+  color: #2e3033;
+  font-size: 14px;
+  color: #2e3033;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px 0;
+}
+main .main_container .upload-nft .article-goods {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 48px 0 32px;
+  width: 100%;
+}
+main .main_container .upload-nft .article-goods h2 {
+  font-size: 28px;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+main .main_container .upload-nft .article-goods hr {
+  height: 2px;
+  background-color: #424242;
+}

@@ -174,12 +174,14 @@ main{
                     justify-content: center;
                     gap: 24px;
                     
+                    .inp-bio-block{
+                        grid-column: 1 / -1;
+                    }
 
                     [class*='-block'] {
                         @include flexblock(center, flex-start, column-reverse);
                         flex: 1 1 auto;
-                        gap: 12px 0;
-                        flex-wrap: wrap;
+                        gap: 12px;
 
                         [class*='-inp'] {
                             width: 100%;
@@ -195,11 +197,10 @@ main{
                     }
                 }
 
-                .bio{
+                .bio-inp{
                     padding: 12px;
                     border: 2px solid #2e3033;
                     border-radius: 8px;
-        
                     #user-bio{
                         resize: none;
                         width: 100%;

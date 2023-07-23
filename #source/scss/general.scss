@@ -194,9 +194,14 @@ $header_height: 80px;
                 }
             }
             .login{
-                padding: 15px;
-                border-radius: 100%;
-                background-color: #0dabe4;
+                flex: 1 1 auto;
+                margin: 0 10px;
+                @include flexblock(flex-end, center);
+                .login-but{
+                    padding: 15px;
+                    border-radius: 100%;
+                    background-color: #0dabe4;
+                }
                 img{
                     transform: rotate(90deg);
                 }

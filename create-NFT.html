@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./cssCode/general.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400&family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./cssCode/prof.css">
+    <link rel="stylesheet" href="./cssCode/nft-create.css">
 </head>
 <body>
     <div class="wrapper">
@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="sub-prof-item">
-                            <a href="./create-NFT.html" class="item-link">
+                            <a href="#" class="item-link">
                                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.40581 20.6001H3.6058C2.28031 20.6001 1.2058 19.5256 1.20581 18.2001L1.2059 3.80013C1.20591 2.47466 2.28043 1.40015 3.6059 1.40015H14.4062C15.7317 1.40015 16.8062 2.47466 16.8062 3.80015V10.4001M15.3999 20.1884V16.7943M15.3999 16.7943V13.4001M15.3999 16.7943L12.0058 16.7943M15.3999 16.7943L18.794 16.7943" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>                                
@@ -72,63 +72,69 @@
             </nav>
         </header>
         <main>
-            <form action="#" method="post">
-                <div class="profile">
-                    <div class="user-back-block">
-                        <img src="./photos/banner_red.png" alt="" class="curr-bg-img">
-                        <input type="file" name="user-bg" id="user-bg">
-                        <label for="user-bg">
-                            <img src="./photos/icons/login.svg" alt="" class="dwnl-bg">
-                        </label>                    
-                    </div>
-                    <div class="user-avatar-block">
-                        <img src="./photos/user.png" alt="" class="avatar-img">
-                        <input type="file" name="user-avatar" id="user-avatar">
-                        <label for="user-avatar">
-                            <img src="./photos/icons/pen.svg" alt="" class="change-avatar">
-                        </label>    
-                    </div>
-                    <button type="submit" class="send-prof-img">upload profile changes</button>
-                </div>
-            </form>
-        
             <div class="main_container">
-                <form action="#" method="post">
-                    <div class="field">
-                        <h3>information</h3>
-                        <div class="user-info">
-                            <div class="inp-full-name-block">
-                                <div class="full-name-inp">
-                                    <input type="text" id="inp-full-name" name="inp-full-name"/>
-                                </div>
-                                <label for="inp-full-name">full name</label>
+                <form action="#" method="get">
+                    <div class="upload-nft">
+                        <div class="create">
+                            <div class="article-goods">
+                                <h2>create your master piece</h2>
+                                <hr>
                             </div>
-                            <div class="inp-nickname-block">
-                                <div class="nick-inp">
-                                    <input type="text" id="inp-nickname" name="inp-nickname"/>
+                            <div class="drop-new-img">
+                                <input type="file" id="upl-nft" name="upl-nft"/>
+                                <div class="label-drop">
+                                    <label for="upl-nft">
+                                        <img src="./photos/drop_new.png" alt="">
+                                        <span>Drop your files here.</span>
+                                    </label>
                                 </div>
-                                <label for="inp-nickname">user name</label>
-                            </div>
-                            <div class="inp-inst-block">
-                                <div class="inst-inp">
-                                    <input type="text" id="inp-inst" name="inp-inst"/>
-                                </div>
-                                <label for="inp-inst">instagram</label>
-                            </div>
-                            <div class="inp-tg-block">
-                                <div class="tg-inp">
-                                    <input type="text" id="inp-tg" name="inp-tg"/>
-                                </div>
-                                <label for="inp-tg">telegram</label>
-                            </div>
-                            <div class="inp-bio-block">
-                                <div class="bio-inp">
-                                    <textarea name="user-bio" id="user-bio" placeholder="Say something about yourself" cols="30" rows="10"></textarea>
-                                </div>
-                                <label for="user-bio">description</label>
                             </div>
                         </div>
-                        <button type="submit" class="upd-prof">Update profile</button>
+                        <div class="add-info-abt-nft">
+                            <div class="article-goods">
+                                <h2>item information</h2>
+                                <hr>
+                            </div>
+                            <div class="info-area-inp">
+                                <div class="inp-area">
+                                    <div class="itemname-inp">
+                                        <input type="text" id="item-name" name="item-name"/>
+                                    </div>
+                                    <label for="item-name">item name</label>
+                                </div>
+                                <div class="inp-area">
+                                    <div class="supply-inp">
+                                        <input type="text" id="supply" name="supply"/>
+                                    </div>
+                                    <label for="supply">supply</label>
+                                </div>
+                                <div class="inp-area">
+                                    <div class="collect-inp">
+                                        <input type="text" id="collection" name="collection"/>
+                                    </div>
+                                    <label for="collection">collection</label>
+                                </div>
+                                <div class="inp-area">
+                                    <div class="blockchain-inp">
+                                        <input type="text" id="blockchain" name="blockchain"/>
+                                    </div>
+                                    <label for="blockchain">blockchain</label>
+                                </div>
+                                <div class="inp-area">
+                                    <div class="extlink-inp">
+                                        <input type="text" id="ext-link" name="ext-link"/>
+                                    </div>
+                                    <label for="ext-link">external link</label>
+                                </div>
+                                <div class="descr-area">
+                                    <div class="descr-inp">
+                                        <textarea name="descr" id="descr" cols="30" placeholder="Say something about item" rows="10"></textarea>
+                                    </div>
+                                    <label for="descr">description</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" id="create-item-but">create item</button>
                     </div>
                 </form>
             </div>
@@ -201,7 +207,8 @@
             </div>
         </footer>
     </div>
-    <script src="./jsCode/attach-photo.js"></script>
+    
     <script src="./jsCode/toggle.js"></script>
+    <script src="./jsCode/drag&drop.js"></script>
 </body>
 </html>

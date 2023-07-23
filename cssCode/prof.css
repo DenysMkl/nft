@@ -161,6 +161,9 @@ main .main_container form .field [class*=-info] {
           justify-content: center;
   gap: 24px;
 }
+main .main_container form .field [class*=-info] .inp-bio-block {
+  grid-column: 1/-1;
+}
 main .main_container form .field [class*=-info] [class*=-block] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,9 +181,7 @@ main .main_container form .field [class*=-info] [class*=-block] {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  gap: 12px 0;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  gap: 12px;
 }
 main .main_container form .field [class*=-info] [class*=-block] [class*=-inp] {
   width: 100%;
@@ -194,12 +195,12 @@ main .main_container form .field [class*=-info] [class*=-block] label {
   text-transform: capitalize;
   font-weight: 200;
 }
-main .main_container form .field .bio {
+main .main_container form .field .bio-inp {
   padding: 12px;
   border: 2px solid #2e3033;
   border-radius: 8px;
 }
-main .main_container form .field .bio #user-bio {
+main .main_container form .field .bio-inp #user-bio {
   resize: none;
   width: 100%;
   outline: transparent;
@@ -208,19 +209,19 @@ main .main_container form .field .bio #user-bio {
   color: white;
   text-transform: none;
 }
-main .main_container form .field .bio #user-bio::-webkit-input-placeholder {
+main .main_container form .field .bio-inp #user-bio::-webkit-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio #user-bio::-moz-placeholder {
+main .main_container form .field .bio-inp #user-bio::-moz-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio #user-bio:-ms-input-placeholder {
+main .main_container form .field .bio-inp #user-bio:-ms-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio #user-bio::-ms-input-placeholder {
+main .main_container form .field .bio-inp #user-bio::-ms-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio #user-bio::placeholder {
+main .main_container form .field .bio-inp #user-bio::placeholder {
   color: #828082;
 }
 main .main_container form .field .upd-prof {
