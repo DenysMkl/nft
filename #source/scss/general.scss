@@ -165,7 +165,6 @@ $header_height: 80px;
             .searchBlock{
                 @include flexblock(center, center);
                 padding: 10px 16px;
-                
                 border-radius: 32px;
                 border: 2px solid #212528;
                 #search{

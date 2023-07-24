@@ -1,0 +1,184 @@
+@mixin flexblock($content, $items, $dir: row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin text($col, $size, $transform){
+    font-size: $size;
+    color: $col;
+    text-transform: $transform;
+}
+
+@mixin active_but(){
+    background: linear-gradient(to right, #C2D1DD, #456DA2);
+    color: #2e3033;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    .bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: right bottom;
+        opacity: 0.5;
+    }
+    .main_container{
+        height: calc(100vh - 80px);
+        justify-content: center;
+        
+        .form-block{
+            @include flexblock(center, center);
+            position: relative;
+            .add-bg-images-block{
+                position: absolute;
+                width: 75%;
+                @include flexblock(space-between, center, column);
+                .image-block{
+                    position: relative;
+                    width: 240px;
+                    height: 240px;
+                    z-index: 999;
+                    .add-bg{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        filter: drop-shadow(4px 4px 10px #6e6e6ead);
+                    }
+                }
+                .right-bg{
+                    align-self: flex-end;
+                    animation: transit linear 2s infinite alternate;
+                }
+
+                .left-bg{
+                    align-self: flex-start;
+                    animation: transit linear 2s infinite alternate;
+                }
+            }
+            .form-areas{
+                @include flexblock(center, flex-start, column);
+                gap: 16px;
+                padding: 20px 60px;
+                border: 2px solid #E5E5E5;
+                backdrop-filter: blur(12px);
+                border-radius: 40px;
+                i{
+                    cursor: pointer;
+                }
+                .capCreate{
+                    align-self: center;
+                    @include text(white, 24px, capitalize);
+                    margin: 8px 0; 
+                }
+                input{
+                    outline: none;
+                    @include text(black, 16px, none);
+                }
+                .inputBlock{
+                    @include flexblock(center, flex-start, column);
+                    position: relative;
+                    text-transform: capitalize;
+                    width: 100%;
+                    padding: 12px 32px;
+                    border-radius: 16px;
+                    background-color: #fff;
+                    margin: 8px 0;
+                    .lab{
+                        position: absolute;
+                        top: 50%;
+                        left: 12px;
+                        transform: translateY(-50%);
+                        transition: .5s;
+                        opacity: .5;
+                        cursor: text;
+                        @include text(#7f7f7f, 16px, capitalize);
+                        &.active{
+                            opacity: 1;
+                            transform: translateY(-275%);
+                            color: #fff;
+                        }
+                    }
+                }
+                .checkBlock{
+                    @include flexblock(center, center);
+                    position: relative;
+                    .checkboxFake{
+                        width: 20px;
+                        height: 20px;
+                        background-color: whitesmoke;
+                        border-radius: 3px;
+                        @include flexblock(center, center);
+        
+                        .fa-check{
+                            opacity: 0;
+                        }
+        
+                        &.active{
+                            background-color: #D0A920;
+                            .fa-check{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .confirm{
+                        margin: 0 15px;
+                        @include text(white, 12px, capitalize);
+                    }
+        
+                }
+                #create{
+                    padding: 12px 24px;
+                    @include active_but();
+                    align-self: center;
+                    border-radius: 20px;
+                    @include text(#2e3033, 14px, capitalize);
+                    font-weight: bold;
+                    opacity: .5;
+                    cursor: pointer;
+                    &.active{
+                        opacity: 1;
+                    }
+                }
+                .haveAcc{
+                    align-self: center;
+                    @include text(white, 14px, none);
+                    .sign{
+                        background-image: linear-gradient(to right, #C2D1DD, #456DA2);
+                        background-clip: text;
+                        color: transparent;
+                        font-weight: bold;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@keyframes transit{
+    0%{
+        transform: translateX(0);
+    }
+
+    33%{
+        transform: translate(4px, 4px);
+    }
+
+    66%{
+        transform: translate(8px, 0);
+    }
+
+    100%{
+        transform: translate(12px, 4px);
+    }    
+}
