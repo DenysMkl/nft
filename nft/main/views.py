@@ -34,8 +34,10 @@ def settings(req):
         forma = Customer_images_form(req.POST, req.FILES, instance=prof)
         if forma.is_valid():
             forma.save()
+            return redirect('sett')
     else:
         forma = Customer_images()
+
     return render(req, 'main/profile-page.html', context={'accs': prof, 'form': form})
 
 
