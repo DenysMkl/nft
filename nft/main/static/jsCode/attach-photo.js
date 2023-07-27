@@ -1,13 +1,13 @@
 const inp = document.querySelector('#user-bg');
 const avatar = document.querySelector('#user-avatar');
-const cur_bg_image = document.querySelector('.curr-bg-img');
-const cur_avatar_image = document.querySelector('.avatar-img');
 
 inp.addEventListener('change', (event) => {
+    const cur_bg_image = document.querySelector('.curr-user-bg');
     replace_image(cur_bg_image, inp)
 });
 
 avatar.addEventListener('change', (event) => {
+    const cur_avatar_image = document.querySelector('.curr-user-avatar');
     replace_image(cur_avatar_image, avatar)
 });
 

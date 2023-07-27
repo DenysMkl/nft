@@ -32,19 +32,17 @@
                 {% if request.user.is_authenticated %}
                     <div class="user-menu">
                     <a href="#" class="wallet">connect wallet</a>
-                    {%for item in accs%}
-                        {% if item|slugify == request.user.username|slugify %}
-                            {% if item.customer_avatar%}
+
+                        {% if accs.customer_avatar%}
+                        <div class="user">
+                            <img src="{{accs.customer_avatar.url}}" alt="user-avatar">
+                        </div>
+                        {%else%}
                             <div class="user">
-                                <img src="{{item.customer_avatar.url}}" alt="user-avatar">
+                                <img src="{%static './photos/user.png' %}" alt="user-avatar">
                             </div>
-                            {%else%}
-                                <div class="user">
-                                    <img src="{%static './photos/user.png' %}" alt="user-avatar">
-                                </div>
-                            {%endif%}
                         {%endif%}
-                    {%endfor%}
+
                     <ul class="sub-prof-menu hidden">
                         <li class="sub-prof-item">
                             <a href="{% url 'prof' %}" class="item-link">

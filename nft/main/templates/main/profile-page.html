@@ -5,24 +5,33 @@
     <link rel="stylesheet" href="{% static './cssCode/prof.css' %}">
     {% endblock head_links %}
         {% block main_content %}
-            <form action="#" method="post">
+            <form action="settings" method="post" enctype="multipart/form-data">
                 <div class="profile">
-                    <div class="user-back-block">
-                        <img src="./photos/banner_red.png" alt="" class="curr-bg-img">
-                        <input type="file" name="user-bg" id="user-bg">
-                        <label for="user-bg">
-                            <img src="./photos/icons/login.svg" alt="" class="dwnl-bg">
-                        </label>                    
-                    </div>
-                    <div class="user-avatar-block">
-                        <img src="./photos/user.png" alt="" class="avatar-img">
-                        <input type="file" name="user-avatar" id="user-avatar">
-                        <label for="user-avatar">
-                            <img src="./photos/icons/pen.svg" alt="" class="change-avatar">
-                        </label>    
-                    </div>
+                    {%csrf_token%}
+                    {%for item in form%}
+                        <div class="{{item.id_for_label}}-block">
+                            {%if item.id_for_label == 'user-bg'%}
+                                {%if accs.customer_bg%}
+                                    <img src="{{accs.customer_bg.url}}" alt="user-bg" class="curr-{{item.id_for_label}}">
+                                {%else%}
+                                    <img src="{%static './photos/banner_red.png' %}" alt="user-bg" class="curr-{{item.id_for_label}}">
+                                {%endif%}
+                            {%else%}
+                                {% if accs.customer_avatar%}
+                                    <img src="{{accs.customer_avatar.url}}" alt="user-avatar" class="curr-{{item.id_for_label}}">
+                                {%else%}
+                                    <img src="{%static './photos/user.png' %}" alt="user-avatar">
+                                {%endif%}
+                            {%endif%}
+                            {{item}}
+                            <label for="{{item.id_for_label}}">
+                                <img src="{% static './photos/icons/dwnl-'|add:item.id_for_label|add:'.svg'%}" class="change-{{item.id_for_label}}">
+                            </label>
+                        </div>
+                    {%endfor%}
                     <button type="submit" class="send-prof-img">upload profile changes</button>
                 </div>
+
             </form>
         
             <div class="main_container">

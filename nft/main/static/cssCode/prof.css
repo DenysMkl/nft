@@ -14,7 +14,7 @@ main .profile {
 main .profile input[type=file] {
   display: none;
 }
-main .profile .user-back-block {
+main .profile .user-bg-block {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 300px;
           flex: 1 1 300px;
@@ -34,7 +34,7 @@ main .profile .user-back-block {
   padding: 40px 80px;
   position: relative;
 }
-main .profile .user-back-block .curr-bg-img {
+main .profile .user-bg-block .curr-user-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@ main .profile .user-back-block .curr-bg-img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .profile .user-back-block label {
+main .profile .user-bg-block label {
   font-size: 16px;
   color: white;
   text-transform: capitalize;
@@ -72,7 +72,7 @@ main .profile .user-avatar-block > * {
   border-radius: 100%;
   cursor: pointer;
 }
-main .profile .user-avatar-block .avatar-img {
+main .profile .user-avatar-block .curr-user-avatar {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +91,7 @@ main .profile .user-avatar-block label {
   background-color: rgba(46, 48, 51, 0);
   opacity: 0;
 }
-main .profile .user-avatar-block label .change-avatar {
+main .profile .user-avatar-block label .change-user-avatar {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
@@ -109,7 +109,7 @@ main .profile .user-avatar-block label:hover {
   -webkit-backdrop-filter: brightness(60%);
           backdrop-filter: brightness(60%);
 }
-main .profile .user-avatar-block label:hover .change-avatar {
+main .profile .user-avatar-block label:hover .change-user-avatar {
   opacity: 1;
 }
 main .profile .send-prof-img {

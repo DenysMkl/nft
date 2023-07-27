@@ -6,7 +6,7 @@ from .models import *
 
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='full name', widget=forms.TextInput(attrs={'class': 'inputTag', 'id': 'fullName'}))
-    email = forms.CharField(label='email', widget=forms.TextInput(attrs={'class': 'inputTag', 'id': 'email'}))
+    email = forms.CharField(label='email', widget=forms.EmailInput(attrs={'class': 'inputTag', 'id': 'email'}))
     password1 = forms.CharField(label='password', widget=forms.PasswordInput(attrs={'class': 'inputTag pass', 'id': 'pass'}))
     password2 = forms.CharField(label='repeat password', widget=forms.PasswordInput(attrs={'class': 'inputTag pass repeat', 'id': 'repeatpass'}))
 
@@ -18,3 +18,13 @@ class RegisterUserForm(UserCreationForm):
 class AuthUserForm(AuthenticationForm):
     username = forms.CharField(label='username', widget=forms.TextInput(attrs={'class': 'inputTag', 'id': 'fullName'}))
     password = forms.CharField(label='password', widget=forms.PasswordInput(attrs={'class': 'inputTag pass', 'id': 'pass'}))
+
+
+class Customer_images_form(forms.ModelForm):
+    class Meta:
+        model = Customer_images
+        fields = ('customer_bg', 'customer_avatar')
+        widgets = {
+            'customer_avatar': forms.FileInput(attrs={'id': 'user-avatar'}),
+            'customer_bg': forms.FileInput(attrs={'id': 'user-bg'})
+        }
