@@ -1,0 +1,59 @@
+    {%extends 'main/base.html'%}
+    {%load static%}
+
+    {% block head_links %}
+    <link rel="stylesheet" href="{% static './cssCode/login.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/f7e44717b5.js" crossorigin="anonymous"></script>
+    {% endblock head_links %}
+        {% block main_content %}
+            <img src="{% static './photos/log-bg.png' %}" alt="" class="bg">
+            <div class="main_container">
+                <form action="#" method="post">
+                    <div class="form-block">
+                        <div class="add-bg-images-block">
+                            <div class="image-block left-bg">
+                                <img src="{% static './photos/log-bg-left-items.png' %}" alt="" class="add-bg">
+                            </div>
+                            <div class="image-block right-bg">
+                                <img src="{% static './photos/log-bg-right-items.png' %}" alt="" class="add-bg">
+                            </div>
+                        </div>
+                        <div class="form-areas">
+                            <h3 class="capCreate">
+                                Create your account
+                            </h3>
+                            {%csrf_token%}
+                            {%for i in form%}
+                            <div class="inputBlock">
+                            <label class="lab" for="{{i.id_for_label}}">{{i.label}}</label>
+                                <div class="inputContent">
+                                    {{i}}
+                                    {% if i.widget_type == 'password' %}
+                                        <i class="fas fa-eye-slash"></i>
+                                    {%endif%}
+                                </div>
+                            </div>
+                            {%endfor%}
+
+                            <div class="checkBlock">
+                                <div class="checkboxFake">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="confirm">I agree with terms & conditions</span>
+                            </div>
+                            <button type="submit" id="create" class="active">create an account</button>
+                            <span class="haveAcc">
+                                Already have an account ?
+                                <a href="{% url 'auth' %}" class="sign">
+                                    Sign in
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% endblock main_content %}
+        {% block scripts_src %}
+            <script src="{%static './jsCode/registration.js'%}"></script>
+        {% endblock scripts_src %}
