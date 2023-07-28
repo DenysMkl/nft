@@ -20,7 +20,7 @@
                                 {% if accs.customer_avatar%}
                                     <img src="{{accs.customer_avatar.url}}" alt="user-avatar" class="curr-{{item.id_for_label}}">
                                 {%else%}
-                                    <img src="{%static './photos/user.png' %}" alt="user-avatar">
+                                    <img src="{%static './photos/user.png' %}" alt="user-avatar" class="curr-{{item.id_for_label}}">
                                 {%endif%}
                             {%endif%}
                             {{item}}
