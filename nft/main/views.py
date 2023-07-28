@@ -12,6 +12,7 @@ from .forms import RegisterUserForm, AuthUserForm, Customer_images_form
 def index(req):
 
     if req.user.is_authenticated and not Customer_images.objects.filter(customer_name=req.user):
+
         Customer_images.objects.create(customer_name=req.user)
         prof = Customer_images.objects.get(customer_name=req.user)
         return render(req, 'main/index.html', context={'isMainPage': True, 'accs': prof})
