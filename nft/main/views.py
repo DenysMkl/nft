@@ -34,7 +34,6 @@ def settings(req):
     prof = Customer_images.objects.get(customer_name=req.user)
 
     if req.method == 'POST':
-        print(req.POST)
         forma = Customer_images_form(req.POST, req.FILES, instance=prof)
         if forma.is_valid():
             forma.save()
