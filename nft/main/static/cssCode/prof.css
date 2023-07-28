@@ -161,7 +161,7 @@ main .main_container form .field [class*=-info] {
           justify-content: center;
   gap: 24px;
 }
-main .main_container form .field [class*=-info] .inp-bio-block {
+main .main_container form .field [class*=-info] .user-bio-block {
   grid-column: 1/-1;
 }
 main .main_container form .field [class*=-info] [class*=-block] {
