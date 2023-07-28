@@ -28,3 +28,14 @@ class Customer_images_form(forms.ModelForm):
             'customer_avatar': forms.FileInput(attrs={'id': 'user-avatar'}),
             'customer_bg': forms.FileInput(attrs={'id': 'user-bg'})
         }
+
+
+class Customer_data_form(forms.ModelForm):
+    full_name = forms.CharField(label='full name', required=False, widget=forms.TextInput(attrs={'id': 'inp-full-name'}), initial='name')
+    user_name = forms.CharField(label='user name', required=False, widget=forms.TextInput(attrs={'id': 'inp-user-name'}))
+    inst_link = forms.CharField(label='instagram', required=False, widget=forms.TextInput(attrs={'id': 'inp-inst'}))
+    tg_link = forms.CharField(label='telegram', required=False, widget=forms.TextInput(attrs={'id': 'inp-tg'}))
+    descr = forms.CharField(label='description', required=False, widget=forms.Textarea(attrs={'id': 'user-bio', 'placeholder':"Say something about yourself"}))
+    class Meta:
+        model = Customer_data
+        fields = ('full_name', 'user_name', 'inst_link', 'tg_link', 'descr')

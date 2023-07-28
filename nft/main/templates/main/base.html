@@ -29,10 +29,10 @@
                     <img src="{%static './photos/icons/search.svg' %}" alt="search" class="icon">
                     <input type="text" placeholder="Search" id="search">
                 </div>
+
                 {% if request.user.is_authenticated %}
                     <div class="user-menu">
                     <a href="#" class="wallet">connect wallet</a>
-
                         {% if accs.customer_avatar%}
                         <div class="user">
                             <img src="{{accs.customer_avatar.url}}" alt="user-avatar">
@@ -82,7 +82,7 @@
                 </div>
                 {% else %}
                     <div class="login">
-                        <a href="{% url 'reg' %}" class="login-but"><img src="{% static './photos/icons/login.svg' %}" alt="log" class="log"></a>
+                        <a href="{% url 'auth' %}" class="login-but"><img src="{% static './photos/icons/login.svg' %}" alt="log" class="log"></a>
                     </div>
                 {% endif %}
             </nav>

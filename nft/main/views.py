@@ -6,18 +6,23 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .models import *
-from .forms import RegisterUserForm, AuthUserForm, Customer_images_form
+from .forms import RegisterUserForm, AuthUserForm, Customer_images_form, Customer_data_form
 
 
 def index(req):
+    prof = None
 
-    if req.user.is_authenticated and not Customer_images.objects.filter(customer_name=req.user):
+    if req.user.is_authenticated:
 
-        Customer_images.objects.create(customer_name=req.user)
+        if not Customer_images.objects.filter(customer_name=req.user):
+            Customer_images.objects.create(customer_name=req.user)
+
+        if not Customer_data.objects.filter(customer_name=req.user):
+            Customer_data.objects.create(customer_name=req.user)
+
         prof = Customer_images.objects.get(customer_name=req.user)
-        return render(req, 'main/index.html', context={'isMainPage': True, 'accs': prof})
 
-    return render(req, 'main/index.html', context={'isMainPage': True})
+    return render(req, 'main/index.html', context={'isMainPage': True, 'accs': prof})
 
 
 def createNFT(req):
@@ -28,20 +33,30 @@ def createNFT(req):
 def profile(req):
     prof = Customer_images.objects.get(customer_name=req.user)
     return render(req, 'main/user-page.html', context={'accs': prof})
+
+
 @login_required
 def settings(req):
     form = Customer_images_form()
+    data = Customer_data_form()
+
     prof = Customer_images.objects.get(customer_name=req.user)
+    prof_data = Customer_data.objects.get(customer_name=req.user)
+    for i in data:
+        i.initial = getattr(prof_data, f'{i.name}')
+
 
     if req.method == 'POST':
-        forma = Customer_images_form(req.POST, req.FILES, instance=prof)
+        mass_of_data = req.POST
+        forma = Customer_images_form(req.POST, req.FILES, instance=prof) if 'detect' in mass_of_data else Customer_data_form(req.POST, instance=prof_data)
+
         if forma.is_valid():
             forma.save()
             return redirect('sett')
     else:
         forma = Customer_images()
 
-    return render(req, 'main/profile-page.html', context={'accs': prof, 'form': form})
+    return render(req, 'main/profile-page.html', context={'accs': prof, 'form': form, 'data_form': data})
 
 
 def prod_page(req):

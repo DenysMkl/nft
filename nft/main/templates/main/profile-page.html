@@ -40,36 +40,15 @@
                     <div class="field">
                         <h3>information</h3>
                         <div class="user-info">
-                            <div class="inp-full-name-block">
-                                <div class="full-name-inp">
-                                    <input type="text" id="inp-full-name" name="inp-full-name"/>
+                            {%csrf_token%}
+                            {%for item in data_form%}
+                            <div class="{{item.id_for_label}}-block">
+                                <div class="{{item.id_for_label}}-space">
+                                    {{item}}
                                 </div>
-                                <label for="inp-full-name">full name</label>
+                                <label for="{{item.id_for_label}}">{{item.label}}</label>
                             </div>
-                            <div class="inp-nickname-block">
-                                <div class="nick-inp">
-                                    <input type="text" id="inp-nickname" name="inp-nickname"/>
-                                </div>
-                                <label for="inp-nickname">user name</label>
-                            </div>
-                            <div class="inp-inst-block">
-                                <div class="inst-inp">
-                                    <input type="text" id="inp-inst" name="inp-inst"/>
-                                </div>
-                                <label for="inp-inst">instagram</label>
-                            </div>
-                            <div class="inp-tg-block">
-                                <div class="tg-inp">
-                                    <input type="text" id="inp-tg" name="inp-tg"/>
-                                </div>
-                                <label for="inp-tg">telegram</label>
-                            </div>
-                            <div class="inp-bio-block">
-                                <div class="bio-inp">
-                                    <textarea name="user-bio" id="user-bio" placeholder="Say something about yourself" cols="30" rows="10"></textarea>
-                                </div>
-                                <label for="user-bio">description</label>
-                            </div>
+                            {%endfor%}
                         </div>
                         <button type="submit" class="upd-prof">Update profile</button>
                     </div>

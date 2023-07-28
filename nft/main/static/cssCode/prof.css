@@ -183,7 +183,7 @@ main .main_container form .field [class*=-info] [class*=-block] {
           flex: 1 1 auto;
   gap: 12px;
 }
-main .main_container form .field [class*=-info] [class*=-block] [class*=-inp] {
+main .main_container form .field [class*=-info] [class*=-block] [class*=-space] {
   width: 100%;
   padding: 8px;
   border: 2px solid #2e3033;
@@ -195,12 +195,12 @@ main .main_container form .field [class*=-info] [class*=-block] label {
   text-transform: capitalize;
   font-weight: 200;
 }
-main .main_container form .field .bio-inp {
+main .main_container form .field .user-bio-space {
   padding: 12px;
   border: 2px solid #2e3033;
   border-radius: 8px;
 }
-main .main_container form .field .bio-inp #user-bio {
+main .main_container form .field .user-bio-space #user-bio {
   resize: none;
   width: 100%;
   outline: transparent;
@@ -209,19 +209,19 @@ main .main_container form .field .bio-inp #user-bio {
   color: white;
   text-transform: none;
 }
-main .main_container form .field .bio-inp #user-bio::-webkit-input-placeholder {
+main .main_container form .field .user-bio-space #user-bio::-webkit-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio-inp #user-bio::-moz-placeholder {
+main .main_container form .field .user-bio-space #user-bio::-moz-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio-inp #user-bio:-ms-input-placeholder {
+main .main_container form .field .user-bio-space #user-bio:-ms-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio-inp #user-bio::-ms-input-placeholder {
+main .main_container form .field .user-bio-space #user-bio::-ms-input-placeholder {
   color: #828082;
 }
-main .main_container form .field .bio-inp #user-bio::placeholder {
+main .main_container form .field .user-bio-space #user-bio::placeholder {
   color: #828082;
 }
 main .main_container form .field .upd-prof {
