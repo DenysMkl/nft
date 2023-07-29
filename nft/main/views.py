@@ -10,7 +10,7 @@ from .forms import RegisterUserForm, AuthUserForm, Customer_images_form, Custome
 
 
 def index(req):
-    prof = None
+    acc_images = None
 
     if req.user.is_authenticated:
 
@@ -20,19 +20,20 @@ def index(req):
         if not Customer_data.objects.filter(customer_name=req.user):
             Customer_data.objects.create(customer_name=req.user)
 
-        prof = Customer_images.objects.get(customer_name=req.user)
+        acc_images = Customer_images.objects.get(customer_name=req.user)
 
-    return render(req, 'main/index.html', context={'isMainPage': True, 'accs': prof})
+    return render(req, 'main/index.html', context={'isMainPage': True, 'acc_images': acc_images})
 
 
 def createNFT(req):
-    prof = Customer_images.objects.get(customer_name=req.user)
-    return render(req, 'main/create-NFT.html', context={'accs': prof})
+    acc_images = Customer_images.objects.get(customer_name=req.user)
+    return render(req, 'main/create-NFT.html', context={'acc_images': acc_images})
 
 
 def profile(req):
-    prof = Customer_images.objects.get(customer_name=req.user)
-    return render(req, 'main/user-page.html', context={'accs': prof})
+    acc_images = Customer_images.objects.get(customer_name=req.user)
+    acc_info = Customer_data.objects.get(customer_name=req.user)
+    return render(req, 'main/user-page.html', context={'acc_images': acc_images, 'acc_info': acc_info})
 
 
 @login_required
@@ -40,7 +41,7 @@ def settings(req):
     form = Customer_images_form()
     data = Customer_data_form()
 
-    prof = Customer_images.objects.get(customer_name=req.user)
+    acc_images = Customer_images.objects.get(customer_name=req.user)
     prof_data = Customer_data.objects.get(customer_name=req.user)
     for i in data:
         i.initial = getattr(prof_data, f'{i.name}')
@@ -48,7 +49,7 @@ def settings(req):
 
     if req.method == 'POST':
         mass_of_data = req.POST
-        forma = Customer_images_form(req.POST, req.FILES, instance=prof) if 'detect' in mass_of_data else Customer_data_form(req.POST, instance=prof_data)
+        forma = Customer_images_form(req.POST, req.FILES, instance=acc_images) if 'detect' in mass_of_data else Customer_data_form(req.POST, instance=prof_data)
 
         if forma.is_valid():
             forma.save()
@@ -56,13 +57,13 @@ def settings(req):
     else:
         forma = Customer_images()
 
-    return render(req, 'main/profile-page.html', context={'accs': prof, 'form': form, 'data_form': data})
+    return render(req, 'main/profile-page.html', context={'acc_images': acc_images, 'form': form, 'data_form': data})
 
 
 def prod_page(req):
 
-    prof = Customer_images.objects.get(customer_name=req.user)
-    return render(req, 'main/goods-temp.html', context={'accs': prof})
+    acc_images = Customer_images.objects.get(customer_name=req.user)
+    return render(req, 'main/goods-temp.html', context={'acc_images': acc_images})
 
 
 class Register(CreateView):

@@ -33,9 +33,9 @@
                 {% if request.user.is_authenticated %}
                     <div class="user-menu">
                     <a href="#" class="wallet">connect wallet</a>
-                        {% if accs.customer_avatar%}
+                        {% if acc_images.customer_avatar%}
                         <div class="user">
-                            <img src="{{accs.customer_avatar.url}}" alt="user-avatar">
+                            <img src="{{acc_images.customer_avatar.url}}" alt="user-avatar">
                         </div>
                         {%else%}
                             <div class="user">

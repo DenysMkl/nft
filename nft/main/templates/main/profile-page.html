@@ -11,14 +11,14 @@
                     {%for item in form%}
                         <div class="{{item.id_for_label}}-block">
                             {%if item.id_for_label == 'user-bg'%}
-                                {%if accs.customer_bg%}
-                                    <img src="{{accs.customer_bg.url}}" alt="user-bg" class="curr-{{item.id_for_label}}">
+                                {%if acc_images.customer_bg%}
+                                    <img src="{{acc_images.customer_bg.url}}" alt="user-bg" class="curr-{{item.id_for_label}}">
                                 {%else%}
                                     <img src="{%static './photos/banner_red.png' %}" alt="user-bg" class="curr-{{item.id_for_label}}">
                                 {%endif%}
                             {%else%}
-                                {% if accs.customer_avatar%}
-                                    <img src="{{accs.customer_avatar.url}}" alt="user-avatar" class="curr-{{item.id_for_label}}">
+                                {% if acc_images.customer_avatar%}
+                                    <img src="{{acc_images.customer_avatar.url}}" alt="user-avatar" class="curr-{{item.id_for_label}}">
                                 {%else%}
                                     <img src="{%static './photos/user.png' %}" alt="user-avatar" class="curr-{{item.id_for_label}}">
                                 {%endif%}
