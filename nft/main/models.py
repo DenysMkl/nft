@@ -1,5 +1,8 @@
+import datetime
+
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.timezone import now
 
 # Create your models here.
 
@@ -21,5 +24,6 @@ class Customer_data(models.Model):
     tg_link = models.CharField(max_length=100, null=True, blank=True)
     descr = models.CharField(max_length=100, null=True, blank=True)
     customer_name = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    date_of_reg = models.DateTimeField(default=now, blank=True)
     def __str__(self):
         return str(self.customer_name)
