@@ -8,7 +8,7 @@
             <form action="settings" method="post" enctype="multipart/form-data">
                 <div class="profile">
                     {%csrf_token%}
-                    {%for item in form%}
+                    {%for item in img_form%}
                         <div class="{{item.id_for_label}}-block">
                             {%if item.id_for_label == 'user-bg'%}
                                 {%if acc_images.customer_bg%}
@@ -34,7 +34,7 @@
                 </div>
 
             </form>
-        
+
             <div class="main_container">
                 <form action="#" method="post">
                     <div class="field">
