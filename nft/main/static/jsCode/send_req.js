@@ -7,4 +7,13 @@ document.addEventListener('click', ()=>{
     xhr.onload = ()=>{
         console.log('it works')
     }
-})
+    xhr.onload = function() {
+      try{
+        data = JSON.parse(xhr.response);
+      } catch (error){
+        console.error('Error parsing stored data:', error);
+     }
+     console.log(data)
+    }
+  }
+)

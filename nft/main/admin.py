@@ -5,3 +5,4 @@ from . import models
 
 admin.site.register(models.Customer_images)
 admin.site.register(models.Customer_data)
+admin.site.register(models.Follower)

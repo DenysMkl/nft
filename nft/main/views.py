@@ -1,5 +1,4 @@
 import json
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
@@ -105,11 +104,13 @@ def profiles(req, value):
                                                        'acc_images': acc_images,
                                                        'acc_info': acc_info})
 
-@csrf_exempt
-def api_view(req):
-    users = User.objects.all()
-    data_context = {i.username: i.email for i in users}
-    if req.method == 'POST':
-        data = json.loads(req.body)
-        print(data)
-    return JsonResponse(data_context)
+
+
+
+# @csrf_exempt
+# def api_view(req):
+#     users = User.objects.all()
+#     data_context = {i.username: i.email for i in users}
+#     if req.method == 'POST':
+#         data = json.loads(req.body)
+#         return JsonResponse(data_context)

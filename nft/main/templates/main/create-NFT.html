@@ -9,74 +9,74 @@
 
 
 
-        {% block main_content %}
+    {% block main_content %}
         <div class="main_container">
-                <form action="#" method="get">
-                    <div class="upload-nft">
-                        <div class="create">
-                            <div class="article-goods">
-                                <h2>create your master piece</h2>
-                                <hr>
-                            </div>
-                            <div class="drop-new-img">
-                                <input type="file" id="upl-nft" name="upl-nft"/>
-                                <div class="label-drop">
-                                    <label for="upl-nft">
-                                        <img src="./photos/drop_new.png" alt="">
-                                        <span>Drop your files here.</span>
-                                    </label>
-                                </div>
+            <form action="#" method="get">
+                <div class="upload-nft">
+                    <div class="create">
+                        <div class="article-goods">
+                            <h2>create your master piece</h2>
+                            <hr>
+                        </div>
+                        <div class="drop-new-img">
+                            <input type="file" id="upl-nft" name="upl-nft"/>
+                            <div class="label-drop">
+                                <label for="upl-nft">
+                                    <img src="{% static './photos/drop_new.png' %}" alt="">
+                                    <span>Drop your files here.</span>
+                                </label>
                             </div>
                         </div>
-                        <div class="add-info-abt-nft">
-                            <div class="article-goods">
-                                <h2>item information</h2>
-                                <hr>
-                            </div>
-                            <div class="info-area-inp">
-                                <div class="inp-area">
-                                    <div class="itemname-inp">
-                                        <input type="text" id="item-name" name="item-name"/>
-                                    </div>
-                                    <label for="item-name">item name</label>
-                                </div>
-                                <div class="inp-area">
-                                    <div class="supply-inp">
-                                        <input type="text" id="supply" name="supply"/>
-                                    </div>
-                                    <label for="supply">supply</label>
-                                </div>
-                                <div class="inp-area">
-                                    <div class="collect-inp">
-                                        <input type="text" id="collection" name="collection"/>
-                                    </div>
-                                    <label for="collection">collection</label>
-                                </div>
-                                <div class="inp-area">
-                                    <div class="blockchain-inp">
-                                        <input type="text" id="blockchain" name="blockchain"/>
-                                    </div>
-                                    <label for="blockchain">blockchain</label>
-                                </div>
-                                <div class="inp-area">
-                                    <div class="extlink-inp">
-                                        <input type="text" id="ext-link" name="ext-link"/>
-                                    </div>
-                                    <label for="ext-link">external link</label>
-                                </div>
-                                <div class="descr-area">
-                                    <div class="descr-inp">
-                                        <textarea name="descr" id="descr" cols="30" placeholder="Say something about item" rows="10"></textarea>
-                                    </div>
-                                    <label for="descr">description</label>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" id="create-item-but">create item</button>
                     </div>
-                </form>
-            </div>
-        {% endblock main_content %}
+                    <div class="add-info-abt-nft">
+                        <div class="article-goods">
+                            <h2>item information</h2>
+                            <hr>
+                        </div>
+                        <div class="info-area-inp">
+                            <div class="inp-area">
+                                <div class="itemname-inp">
+                                    <input type="text" id="item-name" name="item-name"/>
+                                </div>
+                                <label for="item-name">item name</label>
+                            </div>
+                            <div class="inp-area">
+                                <div class="supply-inp">
+                                    <input type="text" id="supply" name="supply"/>
+                                </div>
+                                <label for="supply">supply</label>
+                            </div>
+                            <div class="inp-area">
+                                <div class="collect-inp">
+                                    <input type="text" id="collection" name="collection"/>
+                                </div>
+                                <label for="collection">collection</label>
+                            </div>
+                            <div class="inp-area">
+                                <div class="blockchain-inp">
+                                    <input type="text" id="blockchain" name="blockchain"/>
+                                </div>
+                                <label for="blockchain">blockchain</label>
+                            </div>
+                            <div class="inp-area">
+                                <div class="extlink-inp">
+                                    <input type="text" id="ext-link" name="ext-link"/>
+                                </div>
+                                <label for="ext-link">external link</label>
+                            </div>
+                            <div class="descr-area">
+                                <div class="descr-inp">
+                                    <textarea name="descr" id="descr" cols="30" placeholder="Say something about item" rows="10"></textarea>
+                                </div>
+                                <label for="descr">description</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="create-item-but">create item</button>
+                </div>
+            </form>
+        </div>
+    {% endblock main_content %}
 
 
     {% block scripts_src %}
