@@ -6,8 +6,8 @@
     {% endblock head_links %}
         {% block main_content %}
             <form action="settings" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
                 <div class="profile">
-                    {%csrf_token%}
                     {%for item in img_form%}
                         <div class="{{item.id_for_label}}-block">
                             {%if item.id_for_label == 'user-bg'%}
@@ -37,10 +37,10 @@
 
             <div class="main_container">
                 <form action="#" method="post">
+                    {%csrf_token%}
                     <div class="field">
                         <h3>information</h3>
                         <div class="user-info">
-                            {%csrf_token%}
                             {%for item in data_form%}
                             <div class="{{item.id_for_label}}-block">
                                 <div class="{{item.id_for_label}}-space">

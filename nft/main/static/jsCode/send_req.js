@@ -1,9 +1,12 @@
 xhr = new XMLHttpRequest();
+url = window.location.href;
 
-document.addEventListener('click', ()=>{
-    xhr.open('POST', '/api_u')
+follow_but = document.querySelector('.follow-but')
+
+follow_but.addEventListener('click', ()=>{
+    xhr.open('POST', url)
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhr.send(JSON.stringify({data:'Hello world'}))
+    xhr.send(JSON.stringify({type:follow_but.dataset.act, process: follow_but.classList.contains('active') ? 'follow' : 'unfollow'}))
     xhr.onload = ()=>{
         console.log('it works')
     }

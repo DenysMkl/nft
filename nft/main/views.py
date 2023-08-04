@@ -1,4 +1,5 @@
 import json
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
@@ -93,24 +94,35 @@ def logout_user(req):
 
 
 @login_required
+@csrf_exempt
 def profiles(req, value):
     visit_acc_info = get_object_or_404(Customer_data, user_name=f'@{value}')
     visit_acc_images = Customer_images.objects.get(customer_name=visit_acc_info.customer_name)
     acc_images, acc_info = define(req)
-
+    isFollowed = bool(Follower.objects.filter(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name))
+    if req.method == 'POST':
+        data = json.loads(req.body)
+        if data['process'] == 'follow' and not isFollowed:
+            Follower.objects.create(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name)
+        elif data['process'] == 'unfollow':
+            Follower.objects.get(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name).delete()
+        return JsonResponse({},status=200)
 
     return render(req, 'main/user-page.html', context={'visit_acc_images': visit_acc_images,
                                                        'visit_acc_info': visit_acc_info,
                                                        'acc_images': acc_images,
-                                                       'acc_info': acc_info})
+                                                       'acc_info': acc_info,
+                                                        'isFollowed': 'active' if isFollowed else ''})
 
 
 
 
 # @csrf_exempt
+# @staff_member_required
 # def api_view(req):
 #     users = User.objects.all()
 #     data_context = {i.username: i.email for i in users}
 #     if req.method == 'POST':
 #         data = json.loads(req.body)
 #         return JsonResponse(data_context)
+#     return JsonResponse(data_context)
