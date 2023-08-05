@@ -1,3 +1,123 @@
+main .follows-and-subs {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999;
+  background-color: rgba(26, 36, 40, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+main .follows-and-subs .follow-sub-block .cross{
+    align-self: flex-end;
+    margin: 8px 16px;
+    cursor: pointer;
+}
+
+main .follows-and-subs.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+main .follows-and-subs .follow-sub-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 80%;
+  border-radius: 32px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  pointer-events: all;
+}
+main .follows-and-subs .follow-sub-block .elems-and-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+main .follows-and-subs .follow-sub-block .elems-and-lines .swapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+main .follows-and-subs .follow-sub-block .elems-and-lines .swapper .swapp-item {
+  font-size: 20px;
+  color: #000;
+  text-transform: capitalize;
+  padding: 4px 0;
+  font-weight: bold;
+}
+main .follows-and-subs .follow-sub-block .elems-and-lines .active-line-block {
+  width: 100%;
+  height: 2px;
+  position: relative;
+}
+main .follows-and-subs .follow-sub-block .elems-and-lines .active-line-block .active-line {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(#9dd1d5), to(#3567B4));
+  background: linear-gradient(to right, #9dd1d5, #3567B4);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main .follows-and-subs .follow-sub-block .sublist-block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 100%;
+}
+
 main .profile {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,6 +355,7 @@ main .profile .info-abt-user .descr-block .influence {
 }
 main .profile .info-abt-user .descr-block .influence span {
   padding: 8px;
+  cursor: pointer;
 }
 main .profile .info-abt-user .descr-block .influence .follow {
   border-right: 0.75px solid #2e3033;

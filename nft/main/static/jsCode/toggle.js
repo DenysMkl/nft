@@ -2,6 +2,10 @@ const follow = document.querySelector('.follow-but')
 const filt_sort_buts = document.querySelectorAll('.add-but')
 const avatar_mini = document.querySelector('.user')
 const sub_menu = document.querySelector('.sub-prof-menu')
+const follow_block = document.querySelector('.follows-and-subs')
+const buttons_follow = document.querySelectorAll('.follow-menu-but')
+const cross_x = document.querySelector('.cross')
+
 
 function toggle(trigg, targ, ad_class) {
     if (trigg && targ) {
@@ -33,4 +37,12 @@ toggle(follow, follow, 'active')
 
 filt_sort_buts.forEach(e=>{
     toggle(e, e, 'open')
+})
+
+buttons_follow.forEach(elem=>{
+    toggle(elem, follow_block, 'active')
+})
+
+cross_x.addEventListener('click', ()=>{
+    follow_block.classList.remove('active')
 })

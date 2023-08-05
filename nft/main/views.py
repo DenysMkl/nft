@@ -52,10 +52,10 @@ def settings(req):
 
 
     if req.method == 'POST':
-        mass_of_data = req.POST
+
         images_fill_form = Customer_images_form(req.POST, req.FILES, instance=acc_images)
         data_fill_form = Customer_data_form(req.POST, instance=acc_info)
-        forma = images_fill_form if 'detect' in mass_of_data else data_fill_form
+        forma = images_fill_form if 'detect' in req.POST else data_fill_form
 
         if forma.is_valid():
             forma.save()
@@ -100,19 +100,24 @@ def profiles(req, value):
     visit_acc_images = Customer_images.objects.get(customer_name=visit_acc_info.customer_name)
     acc_images, acc_info = define(req)
     isFollowed = bool(Follower.objects.filter(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name))
+    list_of_followers = Follower.objects.filter(owner_of_acc=visit_acc_info.customer_name)
+    list_of_followings = Follower.objects.filter(follower=visit_acc_info.customer_name)
     if req.method == 'POST':
         data = json.loads(req.body)
         if data['process'] == 'follow' and not isFollowed:
             Follower.objects.create(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name)
+            return JsonResponse({'followers_count': len(list_of_followers)}, status=201)
         elif data['process'] == 'unfollow':
             Follower.objects.get(follower=acc_info.customer_name, owner_of_acc=visit_acc_info.customer_name).delete()
-        return JsonResponse({},status=200)
+            return JsonResponse({'followers_count': len(list_of_followers)})
 
     return render(req, 'main/user-page.html', context={'visit_acc_images': visit_acc_images,
                                                        'visit_acc_info': visit_acc_info,
                                                        'acc_images': acc_images,
                                                        'acc_info': acc_info,
-                                                        'isFollowed': 'active' if isFollowed else ''})
+                                                        'isFollowed': 'active' if isFollowed else '',
+                                                       'followers': len(list_of_followers),
+                                                       'followings': len(list_of_followings)})
 
 
 
