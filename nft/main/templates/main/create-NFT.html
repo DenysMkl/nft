@@ -11,7 +11,7 @@
 
     {% block main_content %}
         <div class="main_container">
-            <form action="#" method="get">
+            <form action="{%url 'nftcr'%}" method="post" enctype="multipart/form-data">
                 <div class="upload-nft">
                     <div class="create">
                         <div class="article-goods">
@@ -34,42 +34,19 @@
                             <hr>
                         </div>
                         <div class="info-area-inp">
-                            <div class="inp-area">
-                                <div class="itemname-inp">
-                                    <input type="text" id="item-name" name="item-name"/>
-                                </div>
-                                <label for="item-name">item name</label>
-                            </div>
-                            <div class="inp-area">
-                                <div class="supply-inp">
-                                    <input type="text" id="supply" name="supply"/>
-                                </div>
-                                <label for="supply">supply</label>
-                            </div>
-                            <div class="inp-area">
-                                <div class="collect-inp">
-                                    <input type="text" id="collection" name="collection"/>
-                                </div>
-                                <label for="collection">collection</label>
-                            </div>
-                            <div class="inp-area">
-                                <div class="blockchain-inp">
-                                    <input type="text" id="blockchain" name="blockchain"/>
-                                </div>
-                                <label for="blockchain">blockchain</label>
-                            </div>
-                            <div class="inp-area">
-                                <div class="extlink-inp">
-                                    <input type="text" id="ext-link" name="ext-link"/>
-                                </div>
-                                <label for="ext-link">external link</label>
-                            </div>
-                            <div class="descr-area">
-                                <div class="descr-inp">
-                                    <textarea name="descr" id="descr" cols="30" placeholder="Say something about item" rows="10"></textarea>
-                                </div>
-                                <label for="descr">description</label>
-                            </div>
+                            {% csrf_token %}
+                            {% for item in form %}
+                                {%if item.id_for_label == 'descr'%}
+                                    <div class="descr-area">
+                                {%else%}
+                                    <div class="inp-area">
+                                {%endif%}
+                                        <div class="{{item.id_for_label}}-inp">
+                                            {{item}}
+                                        </div>
+                                        <label for="{{item.id_for_label}}">{{item.label}}</label>
+                                    </div>
+                            {%endfor%}
                         </div>
                     </div>
                     <button type="submit" id="create-item-but">create item</button>

@@ -127,7 +127,8 @@ main .main_container .upload-nft .add-info-abt-nft .info-area-inp .descr-area #d
   resize: none;
 }
 main .main_container .upload-nft .add-info-abt-nft .info-area-inp input,
-main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea {
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp textarea,
+main .main_container .upload-nft .add-info-abt-nft .info-area-inp select{
   outline: none;
   background-color: transparent;
   font-size: 14px;

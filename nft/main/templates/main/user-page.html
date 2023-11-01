@@ -14,8 +14,8 @@
 
                     <div class="elems-and-lines add-info-block">
                         <ul class="swapper add-info-nav">
-                            <li class="swapp-item add-info-item">followings</li>
-                            <li class="swapp-item add-info-item active">followers</li>
+                            <li class="swapp-item add-info-item follow active" data-follow_type="followings">followings</li>
+                            <li class="swapp-item add-info-item followers" data-follow_type="followers">followers</li>
                         </ul>
                         <div class="active-line-block">
                             <div class="active-line"></div>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="info-abt-user">
                         <div class="name-block">
-                            <span class="user-name">{{visit_acc_info.full_name}}</span>
+                            <span class="user-name" >{{visit_acc_info.full_name}}</span>
                             <span class="nickname">{{visit_acc_info.user_name}}</span>
                         </div>
                         <div class="descr-block">
@@ -88,11 +88,11 @@
                                 </span>
                             </div>
                             <div class="influence">
-                                <span class="follow follow-menu-but">
+                                <span class="follow follow-menu-but" data-method="show_users" data-value="followings">
                                     followings
                                     <span class="numb-of-follow">{{followings}}</span>
                                 </span>
-                                <span class="followers follow-menu-but">
+                                <span class="followers follow-menu-but" data-method="show_users" data-value="followers">
                                     followers
                                     <span class="numb-of-follow followers-numb">{{followers}}</span>
                                 </span>

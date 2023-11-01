@@ -49,3 +49,29 @@ class Customer_data_form(forms.ModelForm):
             'tg_link': 'telegram',
             'descr': 'description'
         }
+
+
+class AddProduct(forms.ModelForm):
+    blockchainW = forms.ModelChoiceField(label='blockchain',queryset=BlockChain.objects.all(), widget=forms.Select(attrs={'id':'blockchain'}))
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['blockchainW'].empty_label = 'Choice blockchain'
+
+    class Meta:
+        model = Product
+        fields = ('item_name', 'count_of_prod', 'collect_relat', 'blockchainW', 'price', 'description')
+        widgets = {
+            'item_name': forms.TextInput(attrs={'id': 'item-name'}),
+            'count_of_prod': forms.TextInput(attrs={'id': 'supply'}),
+            'collect_relat': forms.TextInput(attrs={'id': 'collection'}),
+            'price': forms.TextInput(attrs={'id': 'price'}),
+            'description': forms.Textarea(attrs={'id': 'descr', 'placeholder': 'Say something about item'})
+        }
+        labels = {
+            'item_name': 'item name',
+            'count_of_prod': 'supply',
+            'collect_relat': 'collection',
+            'price': 'price for your product',
+            'description': 'description'
+        }

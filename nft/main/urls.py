@@ -10,6 +10,6 @@ urlpatterns = [
     path('auth', views.Auth.as_view(), name='auth'),
     path('register', views.Register.as_view(), name='reg'),
     path('logout_user', views.logout_user, name='logout'),
-    # path('api_u', views.api_view),
+    path('users_api', views.api_view),
     path('<value>', views.profiles),
 ]
